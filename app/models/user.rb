@@ -3,10 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
-  belongs_to :role
-  belongs_to :room
-  belongs_to :clinic
+  has_many :rooms
+  belongs_to :role, optional: true
   has_one :profile
   has_many :insurance
   has_one :address
@@ -14,4 +12,11 @@ class User < ApplicationRecord
   has_many :notes
   has_many :schedule
 
+  after_create :set_default_role
+
+  private
+
+  def set_default_role
+    self.update(role_id: Role.find_by(code: 'default').id)
+  end
 end

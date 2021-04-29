@@ -1,4 +1,4 @@
 class Room < ApplicationRecord
-  has_many :users
+  belongs_to :users
   has_many :schedule
 end
