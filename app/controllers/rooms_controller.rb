@@ -27,18 +27,16 @@ class RoomsController < ApplicationController
   end
 
   def update
-      if @room.update(room_params)
-        redirect_to @room, notice: "Room was successfully updated."
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @room.update(room_params)
+      redirect_to @room, notice: "Room was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @room.destroy
-      redirect_to rooms_url, notice: "Room was successfully destroyed."
-    end
+    redirect_to rooms_url, notice: "Room was successfully destroyed."
   end
 
   private

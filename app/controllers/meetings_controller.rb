@@ -18,27 +18,24 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(meeting_params)
 
-      if @meeting.save
-        redirect_to @meeting, notice: "Meeting was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @meeting.save
+      redirect_to @meeting, notice: "Meeting was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
-      if @meeting.update(meeting_params)
-        redirect_to @meeting, notice: "Meeting was successfully updated."
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @meeting.update(meeting_params)
+      redirect_to @meeting, notice: "Meeting was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @meeting.destroy
-      redirect_to meetings_url, notice: "Meeting was successfully destroyed."
-    end
+    redirect_to meetings_url, notice: "Meeting was successfully destroyed."
   end
 
   private

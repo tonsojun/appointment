@@ -18,29 +18,24 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
 
-      if @note.save
-        redirect_to @note, notice: "Note was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @note.save
+      redirect_to @note, notice: "Note was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
-      if @note.update(note_params)
-        redirect_to @note, notice: "Note was successfully updated."
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @note.update(note_params)
+      redirect_to @note, notice: "Note was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @note.destroy
-    respond_to do |format|
-      format.html { redirect_to notes_url, notice: "Note was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to notes_url, notice: "Note was successfully destroyed."
   end
 
   private

@@ -18,27 +18,24 @@ class RolesController < ApplicationController
   def create
     @role = Role.new(role_params)
 
-      if @role.save
-        redirect_to @role, notice: "Role was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @role.save
+      redirect_to @role, notice: "Role was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
-      if @role.update(role_params)
-        redirect_to @role, notice: "Role was successfully updated."
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @role.update(role_params)
+      redirect_to @role, notice: "Role was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @role.destroy
-      redirect_to roles_url, notice: "Role was successfully destroyed."
-    end
+    redirect_to roles_url, notice: "Role was successfully destroyed."
   end
 
   private

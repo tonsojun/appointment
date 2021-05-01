@@ -18,27 +18,24 @@ class ClinicsController < ApplicationController
   def create
     @clinic = Clinic.new(clinic_params)
 
-      if @clinic.save
-        redirect_to @clinic, notice: "Clinic was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @clinic.save
+      redirect_to @clinic, notice: "Clinic was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
-      if @clinic.update(clinic_params)
-        redirect_to @clinic, notice: "Clinic was successfully updated."
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @clinic.update(clinic_params)
+      redirect_to @clinic, notice: "Clinic was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @clinic.destroy
-      redirect_to clinics_url, notice: "Clinic was successfully destroyed."
-    end
+    redirect_to clinics_url, notice: "Clinic was successfully destroyed."
   end
 
   private
