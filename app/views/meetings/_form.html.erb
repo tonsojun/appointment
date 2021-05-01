@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :time %>
-    <%= form.time_select :time %>
+    <%= form.label :start %>
+    <%= form.datetime_select :start %>
   </div>
 
   <div class="field">
@@ -24,11 +24,6 @@
   <div class="field">
     <%= form.label :active %>
     <%= form.check_box :active %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">

@@ -16,7 +16,8 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    @meeting = Meeting.new(meeting_params)
+    #current_user devise assigned variable to store current user.
+    @meeting = current_user.meetings.new(meeting_params)
 
     if @meeting.save
       redirect_to @meeting, notice: "Meeting was successfully created."
@@ -44,6 +45,6 @@ class MeetingsController < ApplicationController
     end
 
     def meeting_params
-      params.require(:meeting).permit(:time, :description, :active, :user_id)
+      params.require(:meeting).permit(:start, :description, :active, :user_id)
     end
 end
