@@ -16,11 +16,8 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    #current_user devise assigned variable to store current user.
     @meeting = current_user.meetings.new(meeting_params)
-p '*' * 120
-p @meeting
-p '*' * 120
+
     if @meeting.save
       Meeting.physician_schedule(@meeting.id)
       redirect_to @meeting, notice: "Meeting was successfully created."
