@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
   resources :schedules
   resources :notes
   resources :meetings
@@ -7,10 +8,8 @@ Rails.application.routes.draw do
   resources :insurances
   resources :profiles
   devise_for :users
-  root 'welcome#index'
   resources :specialties
   resources :clinics
   resources :rooms
   resources :roles
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
