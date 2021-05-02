@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" id="datepicker">
     <%= form.label :start %>
     <%= form.datetime_select :start %>
   </div>
@@ -30,3 +30,10 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+
+</script>
