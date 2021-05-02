@@ -15,7 +15,7 @@
   <tbody>
     <% @schedules.each do |schedule| %>
       <tr>
-        <td><%= schedule.user_id %></td>
+        <td><%= schedule.user.profile.first_name %></td>
         <td><%= schedule.meeting_id %></td>
         <td><%= schedule.room_id %></td>
         <td><%= link_to 'Show', schedule %></td>
