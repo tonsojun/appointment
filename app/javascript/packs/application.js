@@ -11,8 +11,8 @@ import "channels"
 import "jquery"
 import "./src/application.scss"
 import "popper.js"
+import "jquery-datetimepicker"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
