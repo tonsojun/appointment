@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  
+  devise_for :users
+
   resources :schedules
   resources :notes
   resources :meetings
@@ -7,7 +10,6 @@ Rails.application.routes.draw do
   resources :addresses
   resources :insurances
   resources :profiles
-  devise_for :users
   resources :specialties
   resources :clinics
   resources :rooms
