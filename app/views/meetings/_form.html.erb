@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" id="datepicker">
     <%= form.label :start %>
     <%= form.datetime_select :start %>
   </div>
@@ -30,3 +30,29 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+  //$("datepicker")
+  $(document).ready(function(){
+    $("button").click(function(){
+        alert("jQuery is working perfectly.");
+    });      
+});
+// $('#datetimepicker1').datetimepicker({
+//  i18n:{
+//   de:{
+//    months:[
+//     'Januar','Februar','März','April',
+//     'Mai','Juni','Juli','August',
+//     'September','Oktober','November','Dezember',
+//    ],
+//    dayOfWeek:[
+//     "So.", "Mo", "Di", "Mi", 
+//     "Do", "Fr", "Sa.",
+//    ]
+//   }
+//  },
+//  timepicker:false,
+//  format:'d.m.Y'
+// });
+</script>
