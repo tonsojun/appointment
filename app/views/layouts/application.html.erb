@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
   <body>
+    <% if user_signed_in? %>
+      <% if current_user.role.code == 'physician' %>
+        <%= render 'partials/sub_admin_nav_bar' %>
+      <% end %>
+      <% if current_user.role.code == 'default' %>
+        <%= render 'partials/main_nav_bar' %>
+      <% end %>
+    <% else %>
+    <%= render 'partials/main_nav_bar' %>
+    <% end %>
     <%= yield %>
   </body>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
 </html>

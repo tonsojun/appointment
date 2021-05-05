@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 2021-04-28 20:05:13
+  description: MyText
+  active: false
+  user: one
+
+two:
+  time: 2021-04-28 20:05:13
+  description: MyText
+  active: false
+  user: two

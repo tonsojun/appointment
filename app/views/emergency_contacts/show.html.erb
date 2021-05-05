@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @emergency_contact.name %>
+</p>
+
+<p>
+  <strong>Phone1:</strong>
+  <%= @emergency_contact.phone1 %>
+</p>
+
+<p>
+  <strong>Phone2:</strong>
+  <%= @emergency_contact.phone2 %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @emergency_contact.email %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @emergency_contact.profile_id %>
+</p>
+
+<%= link_to 'Edit', edit_emergency_contact_path(@emergency_contact) %> |
+<%= link_to 'Back', emergency_contacts_path %>

@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @profile.first_name %>
+</p>
+
+<p>
+  <strong>Middle name:</strong>
+  <%= @profile.middle_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @profile.last_name %>
+</p>
+
+<p>
+  <strong>Birth:</strong>
+  <%= @profile.birth %>
+</p>
+
+<p>
+  <strong>Marital status:</strong>
+  <%= @profile.marital_status %>
+</p>
+
+<p>
+  <strong>Home phone:</strong>
+  <%= @profile.home_phone %>
+</p>
+
+<p>
+  <strong>Cell phone:</strong>
+  <%= @profile.cell_phone %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @profile.gender %>
+</p>
+
+<p>
+  <strong>License:</strong>
+  <%= @profile.license %>
+</p>
+
+<p>
+  <strong>Drivers license:</strong>
+  <%= @profile.drivers_license %>
+</p>
+
+<p>
+  <strong>Specialty:</strong>
+  <%= @profile.specialty_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
