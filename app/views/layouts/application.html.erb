@@ -14,12 +14,8 @@
       <% if current_user.role.code == 'physician' %>
         <%= render 'partials/sub_admin_nav_bar' %>
       <% end %>
-      <% if current_user.role.code == 'default' %>
-        <%= render 'partials/main_nav_bar' %>
-      <% end %>
-    <% else %>
-    <%= render 'partials/main_nav_bar' %>
     <% end %>
+      <%= render 'partials/main_nav_bar' %>
     <%= yield %>
   </body>
 
