@@ -17,8 +17,6 @@
       <% if current_user.role.code == 'default' %>
         <%= render 'partials/main_nav_bar' %>
       <% end %>
-    <% else %>
-    <%= render 'partials/main_nav_bar' %>
     <% end %>
     <%= yield %>
   </body>
