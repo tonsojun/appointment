@@ -9,7 +9,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "jquery"
-import "./src/application.scss"
+// import "./src/application.scss"
 import "popper.js"
 import "jquery-datetimepicker"
 
