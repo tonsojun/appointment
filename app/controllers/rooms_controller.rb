@@ -17,12 +17,10 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-
-      if @room.save
-        redirect_to @room, notice: "Room was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @room.save
+      redirect_to @room, notice: "Room was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
