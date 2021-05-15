@@ -12,11 +12,12 @@ import "jquery"
 // import "./src/application.scss"
 import "popper.js"
 import "jquery-datetimepicker"
-import { Calendar } from "@fullcalendar/core";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import listPlugin from "@fullcalendar/list";
-import flatpickr from "flatpickr";
+import moment from "moment"
+import { Calendar } from "@fullcalendar/core"
+import dayGridPlugin from "@fullcalendar/daygrid"
+import timeGridPlugin from "@fullcalendar/timegrid"
+import listPlugin from "@fullcalendar/list"
+import flatpickr from "flatpickr"
 
 require("flatpickr/dist/themes/dark.css");
 
@@ -26,9 +27,25 @@ Turbolinks.start()
 ActiveStorage.start()
 
 document.addEventListener("turbolinks:load", () => {
-  flatpickr("[data-behavior='flatpickr']", {
-    altInput: true,
-    enableTime: true,
-    dateFormat: "Y-m-d H:i",
+ 
+  $(function () {
+    var calendarEl = document.getElementById("calendar");
+    var calendar = new Calendar(calendarEl, {
+      header: {
+        left: "prev,next",
+        right: "dayGridMonth, listMonth",
+      },
+
+      plugins: [dayGridPlugin, listPlugin],
+      defaultView: "dayGridMonth",
+    });
+
+    calendar.render();
+  
   });
+  // flatpickr("[data-behavior='flatpickr']", {
+  //   altInput: true,
+  //   enableTime: true,
+  //   dateFormat: "Y-m-d H:i",
+  // });
 })
