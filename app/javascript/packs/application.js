@@ -12,23 +12,23 @@ import "jquery"
 // import "./src/application.scss"
 import "popper.js"
 import "jquery-datetimepicker"
-// require("packs/schedule")
-import { Calendar } from 'fullcalendar/core';
-import dayGridPlugin from 'fullcalendar/daygrid';
-import timeGridPlugin from 'fullcalendar/timegrid';
-import listPlugin from 'fullcalendar/list';
+import { Calendar } from "@fullcalendar/core";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import listPlugin from "@fullcalendar/list";
+import flatpickr from "flatpickr";
+
+require("flatpickr/dist/themes/dark.css");
+
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-
-let calendar = new Calendar(calendarEl, {
-  plugins: [ dayGridPlugin, timeGridPlugin, listPlugin ],
-  initialView: 'dayGridMonth',
-  headerToolbar: {
-    left: 'prev,next today',
-    center: 'title',
-    right: 'dayGridMonth,timeGridWeek,listWeek'
-  }
-});
+document.addEventListener("turbolinks:load", () => {
+  flatpickr("[data-behavior='flatpickr']", {
+    altInput: true,
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+  });
+})
