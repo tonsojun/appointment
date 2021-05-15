@@ -3,6 +3,11 @@ class MeetingsController < ApplicationController
 
   def index
     @meetings = Meeting.all
+
+    require 'icalendar'
+
+    # Create a calendar with an event (standard method)
+    @cal = Icalendar::Calendar.new
   end
 
   def show
