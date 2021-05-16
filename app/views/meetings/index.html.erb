@@ -1,39 +1,4 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Meetings</h1>
-
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Time</th>
-      <th>Description</th>
-      <th>Active</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @meetings.each do |meeting| %>
-      <tr>
-        <td id='hello' ><%= meeting.start %></td>
-        <td><%= meeting.description %></td>
-        <td><%= meeting.active %></td>
-        <% if meeting.user.profile == true %>
-        <% else %>
-          <td><%= meeting.user_id %></td>
-        <% end %>
-        <td><%= link_to 'Show', meeting %></td>
-        <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
-        <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Meeting', new_meeting_path %>
 
 <section class="section">
   <div class="container m-t-20">
