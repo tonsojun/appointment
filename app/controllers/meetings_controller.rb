@@ -2,7 +2,7 @@ class MeetingsController < ApplicationController
   before_action :set_meeting, only: %i[ show edit update destroy ]
 
   def index
-    @meetings = Meeting.all
+    @meetings = Meeting.where(start: params[:start]..params[:end_time])
   end
 
   def show
